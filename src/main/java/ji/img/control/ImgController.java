@@ -1,5 +1,10 @@
 package ji.img.control;
 
-public interface ImgController {
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 
+import ji.img.handler.ImgHandlerAdapter;
+
+public interface ImgController {
+	public ImgHandlerAdapter execute(HttpServletRequest request, HttpServletRequest response);
 }
