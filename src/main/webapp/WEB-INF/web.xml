@@ -7,7 +7,7 @@
 
 	<filter>
 		<filter-name>CharacterEncodingFilter</filter-name>
-		<filter-class>ji.img.filter.CharacterEncodingFilter</filter-class>
+		<filter-class>ji.commons.filter.CharacterEncodingFilter</filter-class>
 
 		<init-param>
 			<param-name>encoding</param-name>
@@ -16,18 +16,18 @@
 	</filter>
 	
 	<filter-mapping>
-	<filter-name>FrontController</filter-name>
+	<filter-name>CharacterEncodingFilter</filter-name>
 	<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	
 	<servlet>
 	<servlet-name>FrontController</servlet-name>
-	<servlet-class>ji.img.frontcontroller.ImgDispatcherServlet</servlet-class>
+	<servlet-class>ji.commons.frontcontroller.ImgDispatcherServlet</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
 	<servlet-name>FrontController</servlet-name>
-	<url-pattern>*.img</url-pattern>
+	<url-pattern>*.im</url-pattern>
 	</servlet-mapping>
 	
 

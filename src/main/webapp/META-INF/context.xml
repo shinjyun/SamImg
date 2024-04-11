@@ -2,7 +2,7 @@
 <Context>
 <Resource
 name = "jdbc" 
-auth = "container" 
+auth = "Container" 
 type = "javax.sql.DataSource" 
 factory = "org.apache.commons.dbcp2.BasicDataSourceFactory" 
 driverClassName = "oracle.jdbc.OracleDriver" 
@@ -11,5 +11,6 @@ username = "samsamimg"
 password = "3333" 
 maxTotal = "500" 
 maxIdle = "100" 
-testOnBorrow = "true" />
+testOnBorrow = "true" 
+/>
 </Context>

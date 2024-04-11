@@ -8,7 +8,7 @@
 </head>
 <body>
 <script type="text/javascript">
-location.href = "./ImgSelect.img";
+location.href = "./ImgSelect.im";
 </script>
 </body>
 </html>
