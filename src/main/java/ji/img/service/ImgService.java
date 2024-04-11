@@ -1,5 +1,5 @@
 package ji.img.service;
 
-public class ImgService {
+public interface ImgService {
 
 }

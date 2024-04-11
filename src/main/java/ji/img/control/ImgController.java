@@ -1,5 +1,5 @@
 package ji.img.control;
 
-public class ImgController {
+public interface ImgController {
 
 }
