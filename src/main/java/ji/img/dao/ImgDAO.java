@@ -43,8 +43,8 @@ public class ImgDAO implements ImgService{
 			while (resultSet.next()) {
 				ImgDTO imgDTO = new ImgDTO();
 				imgDTO.setImg_number(resultSet.getInt("img_number"));
-				imgDTO.setImg_update(resultSet.getString("img_upload").substring(0, 10));
 				imgDTO.setImg_upload(resultSet.getString("img_upload").substring(0, 10));
+				imgDTO.setImg_update(resultSet.getString("img_update").substring(0, 10));
 				imgDTO.setImg_url(resultSet.getString("img_url"));
 				
 				arrayList.add(imgDTO);
@@ -93,8 +93,8 @@ public class ImgDAO implements ImgService{
 			
 			while (resultSet.next()) {
 				imgDTO.setImg_number(resultSet.getInt("img_number"));
-				imgDTO.setImg_update(resultSet.getString("img_upload"));
-				imgDTO.setImg_upload(resultSet.getString("img_update"));
+				imgDTO.setImg_upload(resultSet.getString("img_upload").substring(0, 10));
+				imgDTO.setImg_update(resultSet.getString("img_update").substring(0, 10));
 				imgDTO.setImg_url(resultSet.getString("img_url"));
 			}
 		} catch (Exception e) {
@@ -156,7 +156,44 @@ public class ImgDAO implements ImgService{
 
 	@Override
 	public ImgDTO imgUpdate(ImgDTO imgDTO) {
-		return null;
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+		try {
+			Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc");
+			connection = dataSource.getConnection();
+			
+			String sql = "update img set img_update = ?, img_url = ? ";
+			sql += " where img_number = ?";
+			log.info("SQL 확인 - " + sql);
+			
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, imgDTO.getImg_update());
+			preparedStatement.setString(2, imgDTO.getImg_url());
+			preparedStatement.setInt(3, imgDTO.getImg_number());
+			
+			int count = preparedStatement.executeUpdate();
+			
+			if (count > 0) {
+//				connection.commit();
+				log.info("커밋되었습니다.");
+			} else {
+//				connection.rollback();
+				log.info("롤백되었습니다.");
+			}
+		} catch (Exception e) {
+			log.info("이미지 수정 실패 - " + e);
+		} finally {
+			try {
+				preparedStatement.close();
+				connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return imgDTO;
 	}
 
 	@Override

@@ -17,6 +17,8 @@ import org.apache.commons.logging.LogFactory;
 import ji.img.controller.ImgInsertController;
 import ji.img.controller.ImgSelectController;
 import ji.img.controller.ImgSelectDetailController;
+import ji.img.controller.ImgUpdateController;
+import ji.img.controller.ImgUpdateViewController;
 import ji.img.handler.ImgHandlerAdapter;
 
 @WebServlet("/ImgDispatcherServlet")
@@ -67,6 +69,18 @@ public class ImgDispatcherServlet extends HttpServlet implements Servlet{
 			imgHandlerAdapter = controller.execute(request, response);
 			log.info("이미지 등록 확인 - " + imgHandlerAdapter);
 		}
+		
+		else if(pathURL.equals("/ImgUpdateView.im")) {
+			controller = new ImgUpdateViewController( );
+			imgHandlerAdapter = controller.execute(request, response); 
+			log.info("이미지 수정 화면 뷰 확인 - " + imgHandlerAdapter);
+			}
+		
+		else if(pathURL.equals("/ImgUpdate.im")) {
+			controller = new ImgUpdateController( ); 
+			imgHandlerAdapter = controller.execute(request, response); 
+			log.info("이미지 수정 확인 - " + imgHandlerAdapter);
+			}
 		
 		// p.661
 		
