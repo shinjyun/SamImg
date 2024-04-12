@@ -10,5 +10,5 @@ public interface ImgService {
 	public ImgDTO imgSelect(int img_number);
 	public ImgDTO imgInsert(ImgDTO imgDTO);
 	public ImgDTO imgUpdate(ImgDTO imgDTO);
-	public ImgDTO deptDelete(int img_number);
+	public ImgDTO imgDelete(int img_number);
 }

@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import ji.img.controller.ImgDeleteController;
 import ji.img.controller.ImgInsertController;
 import ji.img.controller.ImgSelectController;
 import ji.img.controller.ImgSelectDetailController;
@@ -82,7 +83,20 @@ public class ImgDispatcherServlet extends HttpServlet implements Servlet{
 			log.info("이미지 수정 확인 - " + imgHandlerAdapter);
 			}
 		
-		// p.661
+		else if (pathURL.equals("/ImgDeleteView.im")) {
+			imgHandlerAdapter = new ImgHandlerAdapter();
+			
+			imgHandlerAdapter.setPath("./image/img_delete.jsp");
+			log.info("이미지 삭제 화면 뷰 확인 - " + imgHandlerAdapter);
+		}
+		
+		else if (pathURL.equals("/ImgDelete.im")) {
+			controller = new ImgDeleteController();
+			imgHandlerAdapter = controller.execute(request, response);
+			
+			log.info("이미지 삭제 확인 - " + imgHandlerAdapter);
+		}
+		
 		
 		if (imgHandlerAdapter != null) {
 			if (imgHandlerAdapter.isRedirect()) {

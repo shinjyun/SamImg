@@ -88,7 +88,7 @@
 										class="btn btn-danger btn-block"> 이미지 삭제 </a>
 								</div>
 							</div>
-						</div>
+						</div> 
 					</div>
 				</div>
 			</div>
