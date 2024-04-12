@@ -28,14 +28,10 @@ public class ImgSelectController implements ImgController{
 		log.info(arrayList);
 		
 		ImgHandlerAdapter imgHandlerAdapter = new ImgHandlerAdapter();
-		log.info("부서 정보 조회");
+		log.info("이미지 정보 조회");
 		
 		imgHandlerAdapter.setPath("./image/img_select.jsp");
 		return imgHandlerAdapter;
 	}
 
-	@Override
-	public ImgHandlerAdapter execute(HttpServletRequest request, HttpServletRequest response) {
-		return null;
-	}
 }

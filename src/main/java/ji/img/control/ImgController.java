@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 import ji.img.handler.ImgHandlerAdapter;
 
 public interface ImgController {
-	public ImgHandlerAdapter execute(HttpServletRequest request, HttpServletRequest response);
+	public ImgHandlerAdapter execute(HttpServletRequest request, HttpServletResponse response);
 
-	ImgHandlerAdapter execute(HttpServletRequest request, HttpServletResponse response);
 }

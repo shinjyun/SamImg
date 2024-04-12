@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>부서 관리</title>
+<title>이미지 관리</title>
 <link rel="stylesheet" type="text/css"
 	href="./css/bootstrap.min_4.5.0.css">
 <link rel="stylesheet" type="text/css" href="./css/global.css">
@@ -37,8 +37,8 @@
 							<thead class="thead-light">
 								<tr class="text-center">
 									<th>이미지 번호</th>
-									<th>이미지 업로드</th>
-									<th>이미지 수정</th>
+									<th>이미지 업로드 날짜</th>
+									<th>이미지 수정 날짜</th>
 									<th>이미지 url</th>
 									<th></th>
 								</tr>
@@ -60,7 +60,7 @@
 
 								<c:if test="${empty arrayList}">
 									<tr>
-										<td clospan="4">등록된 이미지가 없습니다.</td>
+										<td colspan="4">등록된 이미지가 없습니다.</td>
 									</tr>
 								</c:if>
 							</tbody>

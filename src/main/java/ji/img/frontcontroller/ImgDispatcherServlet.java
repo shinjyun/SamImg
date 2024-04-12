@@ -15,6 +15,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import ji.img.controller.ImgSelectController;
+import ji.img.controller.ImgSelectDetailController;
 import ji.img.handler.ImgHandlerAdapter;
 
 @WebServlet("/ImgDispatcherServlet")
@@ -44,8 +45,16 @@ public class ImgDispatcherServlet extends HttpServlet implements Servlet{
 		if (pathURL.equals("/ImgSelect.im")) {
 			controller = new ImgSelectController();
 			imgHandlerAdapter = controller.execute(request, response);
-			log.info("부서 조회 확인 - " + imgHandlerAdapter);
+			log.info("이미지 조회 확인 - " + imgHandlerAdapter);
 		}
+		
+		else if (pathURL.equals("/ImgSelectDetail.im")) {
+			controller = new ImgSelectDetailController();
+			imgHandlerAdapter = controller.execute(request, response);
+			log.info("상세 이미지 조회 확인 - " + imgHandlerAdapter);
+		}
+		
+		// p.661
 		
 		if (imgHandlerAdapter != null) {
 			if (imgHandlerAdapter.isRedirect()) {
@@ -55,6 +64,5 @@ public class ImgDispatcherServlet extends HttpServlet implements Servlet{
 				dispatcher.forward(request, response);
 			}
 		}
-		// p.661
 	}
 }

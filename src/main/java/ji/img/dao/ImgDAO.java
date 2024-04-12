@@ -22,7 +22,50 @@ public class ImgDAO implements ImgService{
 
 	@Override
 	public ArrayList<ImgDTO> imgSelectAll() {
-		return null;
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		
+		ArrayList<ImgDTO> arrayList = new ArrayList<ImgDTO>();
+		
+		try {
+			Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc");
+			connection = dataSource.getConnection();
+			
+			String sql = "select img_number, img_upload, img_update, img_url from img";
+			log.info("SQL 확인 - " + sql);
+			preparedStatement = connection.prepareStatement(sql);
+			
+			resultSet = preparedStatement.executeQuery();
+			
+			while (resultSet.next()) {
+				ImgDTO imgDTO = new ImgDTO();
+				imgDTO.setImg_number(resultSet.getInt("img_number"));
+				imgDTO.setImg_update(resultSet.getString("img_upload"));
+				imgDTO.setImg_upload(resultSet.getString("img_upload"));
+				imgDTO.setImg_url(resultSet.getString("img_url"));
+				
+				arrayList.add(imgDTO);
+			}
+			
+			resultSet.getRow();
+			if (resultSet.getRow() == 0) {
+				log.info("등록한 이미지가 없습니다. 이미지를 등록해주세요.");
+			}
+		} catch (Exception e) {
+			log.info("전체 이미지 조회 실패 - " + e);
+		} finally {
+			try {
+				resultSet.close();
+				preparedStatement.close();
+				connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return arrayList;
 	}
 
 	@Override
@@ -38,7 +81,7 @@ public class ImgDAO implements ImgService{
 			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc");
 			connection = dataSource.getConnection();
 			
-			String sql = "select img_number, img_upload, img_update, img_url from img";
+			String sql = "select img_number, img_upload, img_update, img_url from img ";
 			sql += "where img_number = ?";
 			log.info("SQL 확인 - " + sql);
 			
