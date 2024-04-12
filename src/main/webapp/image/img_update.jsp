@@ -64,7 +64,7 @@
 										<label for="img_url" class="ml-sm-3 col-form-label"> 이미지 url
 										</label>
 										<div class="ml-sm-3">
-											<input type="text" name="img_update" id="img_update"
+											<input type="text" name="img_url" id="img_url"
 												class="form-control form-control-sm" value="${imgDTO.img_url}">
 										</div>
 									</div>
