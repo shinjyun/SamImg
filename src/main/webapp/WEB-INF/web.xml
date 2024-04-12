@@ -22,7 +22,7 @@
 	
 	<servlet>
 	<servlet-name>FrontController</servlet-name>
-	<servlet-class>ji.commons.frontcontroller.ImgDispatcherServlet</servlet-class>
+	<servlet-class>ji.img.frontcontroller.ImgDispatcherServlet</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>

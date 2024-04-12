@@ -1,7 +1,15 @@
 package ji.img.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Logger;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -19,7 +27,45 @@ public class ImgDAO implements ImgService{
 
 	@Override
 	public ImgDTO imgSelect(int img_number) {
-		return null;
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		
+		ImgDTO imgDTO = new ImgDTO();
+		
+		try {
+			Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc");
+			connection = dataSource.getConnection();
+			
+			String sql = "select img_number, img_upload, img_update, img_url from img";
+			sql += "where img_number = ?";
+			log.info("SQL 확인 - " + sql);
+			
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, img_number);
+			
+			resultSet = preparedStatement.executeQuery();
+			
+			while (resultSet.next()) {
+				imgDTO.setImg_number(resultSet.getInt("img_number"));
+				imgDTO.setImg_update(resultSet.getString("img_upload"));
+				imgDTO.setImg_upload(resultSet.getString("img_update"));
+				imgDTO.setImg_url(resultSet.getString("img_url"));
+			}
+		} catch (Exception e) {
+			log.info("특정 이미지 조회 실패 - " + e);
+		} finally {
+			try {
+				resultSet.close();
+				preparedStatement.close();
+				connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return imgDTO;
 	}
 
 	@Override
