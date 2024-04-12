@@ -46,7 +46,7 @@ public class ImgDAO implements ImgService{
 				imgDTO.setImg_upload(resultSet.getString("img_upload").substring(0, 10));
 				imgDTO.setImg_update(resultSet.getString("img_update").substring(0, 10));
 				imgDTO.setImg_url(resultSet.getString("img_url"));
-				
+				System.out.println(imgDTO);
 				arrayList.add(imgDTO);
 			}
 			
