@@ -46,14 +46,14 @@
 									<div class="form-group row">
 										<label for="img_upload" class="ml-sm-3 col-form-label">이미지 업로드</label>
 										<div class="ml-sm-3">
-											<input type="text" name="img_upload" id="img"
+											<input type="date" name="img_upload" id="img"
 												class="form-control form-control-sm">
 										</div>
 									</div>
 									<div class="form-group row">
 										<label for="img_update" class="ml-sm-3 col-form-label">이미지 수정</label>
 										<div class="ml-sm-3">
-											<input type="text" name="img_update" id="img"
+											<input type="date" name="img_update" id="img"
 												class="form-control form-control-sm">
 										</div>
 									</div>

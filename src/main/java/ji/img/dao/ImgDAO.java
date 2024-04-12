@@ -1,6 +1,7 @@
 package ji.img.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -42,8 +43,8 @@ public class ImgDAO implements ImgService{
 			while (resultSet.next()) {
 				ImgDTO imgDTO = new ImgDTO();
 				imgDTO.setImg_number(resultSet.getInt("img_number"));
-				imgDTO.setImg_update(resultSet.getString("img_upload"));
-				imgDTO.setImg_upload(resultSet.getString("img_upload"));
+				imgDTO.setImg_update(resultSet.getString("img_upload").substring(0, 10));
+				imgDTO.setImg_upload(resultSet.getString("img_upload").substring(0, 10));
 				imgDTO.setImg_url(resultSet.getString("img_url"));
 				
 				arrayList.add(imgDTO);
@@ -121,7 +122,7 @@ public class ImgDAO implements ImgService{
 			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc");
 			connection = dataSource.getConnection();
 			String sql = "insert into img (img_number, img_upload, img_update, img_url ) ";
-			sql += " values (?, ?, ? ) ";
+			sql += " values (?, ?, ?, ? ) ";
 			log.info("SQL 확인 - " + sql);
 			
 			preparedStatement = connection.prepareStatement(sql);
