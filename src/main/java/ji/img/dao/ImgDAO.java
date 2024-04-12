@@ -113,7 +113,44 @@ public class ImgDAO implements ImgService{
 
 	@Override
 	public ImgDTO imgInsert(ImgDTO imgDTO) {
-		return null;
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+		try {
+			Context context = new InitialContext();
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc");
+			connection = dataSource.getConnection();
+			String sql = "insert into img (img_number, img_upload, img_update, img_url ) ";
+			sql += " values (?, ?, ? ) ";
+			log.info("SQL 확인 - " + sql);
+			
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, imgDTO.getImg_number());
+			preparedStatement.setString(2, imgDTO.getImg_upload());
+			preparedStatement.setString(3, imgDTO.getImg_update());
+			preparedStatement.setString(4, imgDTO.getImg_url());
+			
+			int count = preparedStatement.executeUpdate();
+			
+			if (count > 0) {
+//				connection.commit();
+				log.info("커밋되었습니다.");
+			} else {
+				connection.rollback();
+				log.info("롤백되었습니다.");
+			}
+		} catch (Exception e) {
+			log.info("이미지 업로드 실패 - " + e);
+		} finally {
+			try {
+				preparedStatement.close();
+				connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return imgDTO;
 	}
 
 	@Override

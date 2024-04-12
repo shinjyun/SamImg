@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import ji.img.controller.ImgInsertController;
 import ji.img.controller.ImgSelectController;
 import ji.img.controller.ImgSelectDetailController;
 import ji.img.handler.ImgHandlerAdapter;
@@ -52,6 +53,19 @@ public class ImgDispatcherServlet extends HttpServlet implements Servlet{
 			controller = new ImgSelectDetailController();
 			imgHandlerAdapter = controller.execute(request, response);
 			log.info("상세 이미지 조회 확인 - " + imgHandlerAdapter);
+		}
+		
+		else if (pathURL.equals("/ImgInsertView.im")) {
+			imgHandlerAdapter = new ImgHandlerAdapter();
+			
+			imgHandlerAdapter.setPath("./image/img_insert_view.jsp");
+			log.info("이미지 등록 화면 뷰 확인 - " + imgHandlerAdapter);
+		}
+		
+		else if (pathURL.equals("/ImgInsert.im")) {
+			controller = new ImgInsertController();
+			imgHandlerAdapter = controller.execute(request, response);
+			log.info("이미지 등록 확인 - " + imgHandlerAdapter);
 		}
 		
 		// p.661
