@@ -18,8 +18,19 @@ public class ImgInsertController implements ImgController{
 	
 	@Override
 	public ImgHandlerAdapter execute(HttpServletRequest request, HttpServletResponse response) {
-		int img_number = Integer.parseInt(request.getParameter("img_number"));
-		log.info(img_number);
+		// img_number 파라미터의 값이 null인 경우를 처리하기 위해 변수 선언
+        int img_number = 0;
+        String imgNumberParameter = request.getParameter("img_number");
+        if(imgNumberParameter != null) {
+            // img_number 파라미터가 null이 아닌 경우에만 파싱하여 변수에 저장
+            img_number = Integer.parseInt(imgNumberParameter);
+        } else {
+            // img_number 파라미터가 null인 경우에 대한 처리
+            // 예를 들어, 기본값을 설정하거나 오류 처리를 수행할 수 있습니다.
+            log.error("img_number parameter is null");
+            // 기본값 설정 예시:
+            // img_number = 0; // 또는 다른 기본값 설정
+        }
 		
 		String img_upload = request.getParameter("img_upload");
 		log.info(img_upload);
