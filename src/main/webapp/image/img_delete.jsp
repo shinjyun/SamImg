@@ -13,6 +13,22 @@
 <script src="./js/bootstrap.min_4.5.0.js" type="text/javascript"></script>
 <script src="./js/jquery.validate.min.js" type="text/javascript"></script>
 <script src="./js/dept_validity.js" type="text/javascript"></script>
+
+<!-- JavaScript 코드 추가 -->
+<script type="text/javascript">
+    // 이미지 삭제를 확인하는 함수
+    function confirmDelete() {
+        // confirm 창을 띄워 사용자에게 삭제 여부를 물어봅니다.
+        var confirmed = confirm("이미지를 삭제하시겠습니까?");
+        // 사용자가 확인을 선택했을 경우
+        if (confirmed) {
+            // 폼을 제출합니다.
+            document.getElementById("sign_img").submit();
+        } else {
+            // 사용자가 취소를 선택했을 경우 아무 작업도 하지 않습니다.
+        }
+    }
+</script>
 </head>
 <body>
 	<header id="main-header" class="py-2 btn-dark text-white">
@@ -47,7 +63,8 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<button type="submit" class="btn btn-secondary">삭제</button>
+										<!-- 삭제 버튼에 직접 onclick 이벤트를 추가하여 confirmDelete 함수를 호출 -->
+										<button type="button" class="btn btn-secondary" onclick="confirmDelete()">삭제</button>
 										<button type="reset" class="btn btn-secondary">취소</button>
 									</div>
 								</fieldset>
