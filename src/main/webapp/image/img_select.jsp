@@ -56,7 +56,7 @@
                                         </td>
                                         <td>
                                             <a href="./ImgSelectDetail.im?img_number=${arrayList.img_number}" class="btn btn-outline-info"> 이미지 상세보기 </a>
-                                        </tPd>
+                                        </td>
                                     </tr>
                                 </c:forEach>
 
