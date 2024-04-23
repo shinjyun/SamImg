@@ -7,6 +7,8 @@ module SamImg{
 	requires java.naming;
 	requires java.servlet.jsp;
 	requires cos;
+	requires org.apache.tomcat.coyote;
+	requires org.apache.tomcat.jni;
 	requires java.desktop;
 	requires jai.core;
 }
