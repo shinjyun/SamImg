@@ -5,6 +5,14 @@
 ![슬라이드0001](https://github.com/shinjyun/SamImg/assets/147064251/21b841c6-cf14-490a-947a-be783a547540)
 [팀 프로젝트 GitHub 링크](https://github.com/JunSuU98/samsam.git)
 
+### 테이블 명세서
+![image](https://github.com/shinjyun/SamImg/assets/147064251/2561ec9a-90e0-4876-948a-5e89866c5001)
+
+### 프로젝트 개발 계획서
+![프로젝트 구축 파트](https://github.com/shinjyun/SamImg/assets/147064251/4dfabd25-e0ac-4607-bc49-427a3a369733)
+
+![데이터 연동 파트](https://github.com/shinjyun/SamImg/assets/147064251/08fd57f6-1dad-4891-8a27-e63ea53815c1)
+
 <br/>
 
 ## ⚙️ 공통 개발 환경
