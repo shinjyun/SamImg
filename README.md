@@ -4,6 +4,8 @@
 ## MVC 프론트 컨트롤러 패턴을 통한 중고 거래 웹 솔루션
 ![슬라이드0001](https://github.com/shinjyun/SamImg/assets/147064251/21b841c6-cf14-490a-947a-be783a547540)
 
+<br/>
+
 ## ⚙️ 공통 개발 환경
 ![슬라이드0002](https://github.com/shinjyun/SamImg/assets/147064251/b86ab980-3e3b-4c1d-bf91-c1d35e52f73d)
 
@@ -15,6 +17,8 @@
 
 ## 1-3. 공통 ERD 구성
 ![슬라이드0005](https://github.com/shinjyun/SamImg/assets/147064251/aa62bacd-3bc0-400e-9e5a-ff9cccd2674f)
+
+<br/>
 
 # 🖼️ 이미지 파트
 ![슬라이드0006](https://github.com/shinjyun/SamImg/assets/147064251/42c11d6a-17f4-4b32-90f4-a59d2c51ad7d)
@@ -37,6 +41,8 @@
 
 ![슬라이드0012](https://github.com/shinjyun/SamImg/assets/147064251/edcab0ab-d05f-4611-a174-2dfcab7d3364)
 
+<br/>
+
 ## 4-1. 상세 이미지 정보 실행 화면
 ![슬라이드0013](https://github.com/shinjyun/SamImg/assets/147064251/3a357452-73a9-4901-bb66-e57b8f6a899a)
 
@@ -44,6 +50,8 @@
 ![슬라이드0014](https://github.com/shinjyun/SamImg/assets/147064251/64d82986-4204-455a-b4dd-b936b29659f4)
 
 ![슬라이드0015](https://github.com/shinjyun/SamImg/assets/147064251/ff96370f-6594-40e4-b9e4-eb52dae3e27d)
+
+<br/>
 
 ## 5-1. 이미지 등록 실행 화면
 ![슬라이드0016](https://github.com/shinjyun/SamImg/assets/147064251/09fb9079-1f09-4576-bb79-e468f908cbd5)
@@ -53,8 +61,12 @@
 ### 5-2. 이미지 등록에 대한 오류 및 해결 과정
 ![슬라이드0018](https://github.com/shinjyun/SamImg/assets/147064251/b40254ad-201d-4206-82bc-748f72d0e3c6)
 
+<br/>
+
 ## 6-1. 이미지 삭제 실행 화면
 ![슬라이드0019](https://github.com/shinjyun/SamImg/assets/147064251/8c45bfbb-c17f-4342-bc0f-15f1860feef7)
+
+<br/>
 
 ## 7-1. 이미지 수정 실행 화면
 ![슬라이드0020](https://github.com/shinjyun/SamImg/assets/147064251/17b2db1e-2c9a-4924-8bc6-124b9e35e21e)
@@ -64,8 +76,12 @@
 
 ![슬라이드0022](https://github.com/shinjyun/SamImg/assets/147064251/58b33d47-60b1-41a9-815e-ba7eb29f02a4)
 
+<br/>
+
 ### 8. 세팅 중 오류 및 해결 과정
 ![슬라이드0023](https://github.com/shinjyun/SamImg/assets/147064251/51ab8977-9351-4d8d-b7b2-6ca26f0857f5)
+
+<br/>
 
 ## 9. 파이널에 추가 할 기능
 ![슬라이드0024](https://github.com/shinjyun/SamImg/assets/147064251/36943bde-7524-4b5c-85e5-5b6831a378ce)
