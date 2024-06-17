@@ -3,6 +3,7 @@
 
 ## MVC 프론트 컨트롤러 패턴을 통한 중고 거래 웹 솔루션
 ![슬라이드0001](https://github.com/shinjyun/SamImg/assets/147064251/21b841c6-cf14-490a-947a-be783a547540)
+[팀 프로젝트 GitHub 링크](https://github.com/JunSuU98/samsam.git)
 
 <br/>
 
